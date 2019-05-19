@@ -1,4 +1,8 @@
-window.onload = function() {
+// window.onload = function() {
+//     var interval = setInterval(handleRefresh, 3000);
+//     handleRefresh();
+// }
+function load() {
     var interval = setInterval(handleRefresh, 3000);
     handleRefresh();
 }
@@ -9,16 +13,20 @@ function handleRefresh() {
 	$.getJSON(url,updatestatus);
 }	
 
-
+var date;
+var grade;
 function updatestatus(status) {
 	var statusDiv = document.getElementById("status");
 	status = status.RealtimeCityAir.row;
-
-	
+		
 	for (var i = 0; i < status.length; i++) {
 		var state = status[i];
 		var div = document.createElement("div");
 		div.setAttribute("class", "status");
+		date = state.MSRDT.substring(0,4)+"-"+state.MSRDT.substring(4,6)+"-"+
+		state.MSRDT.substring(6,8)+" "+state.MSRDT.substring(8,10)+":"+state.MSRDT.substring(10,12);
+//		grade = setgrade(state.IDEX_NM);
+
 		/*		
 		MSRDT	측정일시
 		MSRRGN_NM	권역명
@@ -34,9 +42,10 @@ function updatestatus(status) {
 		ARPLT_MAIN	지수결정물질
 		*/
 		//추가2
-		div.innerHTML = state.MSRDT+"에"+state.MSRRGN_NM+" "+state.MSRSTE_NM+"에서 측정한 " +
-				"미세먼지 농도는 "+state.PM10+"이고, 초미세먼지농도는"+state.PM25+"입니다.";
-		//+state.+state.+
+		div.innerHTML =  date+" 에 "+state.MSRRGN_NM+" "+state.MSRSTE_NM+"에서 측정한 " +
+				"미세먼지 농도는 "+state.PM10+"이고, 초미세먼지농도는 "+state.PM25+"입니다.<br>"
+				+"통합 대기환경 등급 : "+state.IDEX_NM+" <br>통합 대기환경 지수 :"+state.IDEX_MVL;
+
 		
 		if (statusDiv.childElementCount == 0) {
 			statusDiv.appendChild(div);

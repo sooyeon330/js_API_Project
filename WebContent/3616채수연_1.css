@@ -4,8 +4,17 @@ body {
 	margin-left: 40px;
 	margin-right: 40px;
 }
+div#title {
+	background: rgb(255, 0, 98);
+	color: rgb(255, 255, 255);
+	text-align: center;
+	text-valign: middle;
+	height: 25px;
+	font-size: 15pt;
+	padding: 20px;
+}
 div#status {
-	background-color: #ccffcc;
+	background-color: #f3d1ec;
 	-webkit-border-radius: 6px;
 	border-radius: 6px;
 	margin: 10px 0px 0px 0px;
@@ -14,11 +23,11 @@ div#status {
 }
 div.status {
 	font-family: Verdana, Helvetica, sans-serif;
-	color: #0000ff;
+	color: #ff2222;
 	padding: 10px;
 }
 div.status:nth-child(2n) {
-	background-color: #eeee00;
+	background-color: #fafabe;
 }
 div.status:first-child {
 	-webkit-border-top-left-radius: 6px;
