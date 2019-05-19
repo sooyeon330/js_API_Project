@@ -1,8 +1,7 @@
-window.onload = function() {
+function load() {
     var interval = setInterval(handleRefresh, 3000);
     handleRefresh();
 }
-
 function handleRefresh() {
 	//추가 1
 		var url = "http://openapi.seoul.go.kr:8088/677766796d636f743232446f765077/xml/RealtimeCityAir/1/25/";
@@ -15,7 +14,6 @@ function handleRefresh() {
 		xhttp.open("GET",url,true);
 		xhttp.send();
 }
-
 function updatestatus(xml){
 	var xmlDoc = xml.responseXML;
 	var AirDiv = document.getElementById("Airstate");

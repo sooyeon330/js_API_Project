@@ -6,14 +6,15 @@
 <title>서울시 권역별 실시간 대기환경 현황</title>
 
 <link rel="stylesheet" href="3616채수연_2.css">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+    
 <script type="text/javascript" src="3616채수연_2.js"></script>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
-	<div  data-role="header" 
-		style="background:blue; color: yellow; text-align: center; text-valign: middle; height: 25px; font-size: 15pt; padding: 20px;">
-	 	 서울시 권역별 실시간 대기환경 현황</div>
+	<div id="title" data-role="header"> 서울시 권역별 실시간 대기환경 현황</div>
+	<input type="button" value="대기현황보기" onclick="load()">
 	<div id="Airstate"></div>
 	    
 

@@ -14,7 +14,6 @@ function handleRefresh() {
 }	
 
 var date;
-var grade;
 function updatestatus(status) {
 	var statusDiv = document.getElementById("status");
 	status = status.RealtimeCityAir.row;
