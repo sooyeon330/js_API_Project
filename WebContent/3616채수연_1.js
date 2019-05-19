@@ -34,7 +34,7 @@ function updatestatus(status) {
 		ARPLT_MAIN	지수결정물질
 		*/
 		//추가2
-		div.innerHTML = state.MSRDT+"에"+state.MSRRGN_NM+" "+state.MSRSTE_NM+"에서 측정한 '" +
+		div.innerHTML = state.MSRDT+"에"+state.MSRRGN_NM+" "+state.MSRSTE_NM+"에서 측정한 " +
 				"미세먼지 농도는 "+state.PM10+"이고, 초미세먼지농도는"+state.PM25+"입니다.";
 		//+state.+state.+
 		

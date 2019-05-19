@@ -15,40 +15,25 @@ function handleRefresh() {
 		xhttp.open("GET",url,true);
 		xhttp.send();
 }
-function updateTraffic(xml){
-	var xmlDoc = xml.responseXML;
-	var subwayDiv = document.getElementById("subwaypeople");
-	traffic = xmlDoc.getElementsByTagName("row");
-	for(var i=0; i<traffic.length; i++){
-		var row = traffic[i];
-		var div = document.createElement("div");
-		div.setAttribute("class","subwayItem");
-		div.innerHTML = row.getElementsByTagName("USE_DT")[0].childNodes[0].nodeValue+"일에 "
-					+row.getElementsByTagName("LINE_NUM")[0].childNodes[0].nodeValue+"호선에 "
-					+row.getElementsByTagName("SUB_STA_NM")[0].childNodes[0].nodeValue+"역에서 "
-					+row.getElementsByTagName("RIDE_PASGR_NUM")[0].childNodes[0].nodeValue+"명이 승차하고 "
-					+row.getElementsByTagName("ALIGHT_PASGR_NUM")[0].childNodes[0].nodeValue+"명이 내렸습니다.";
-		subwayDiv.appendChild(div);
-	}
-}
+
 function updatestatus(xml){
 	var xmlDoc = xml.responseXML;
-	var statusDiv = document.getElementById("stateDiv");
-	status = xmlDoc.getElementsByTagName("row");
-	for(var i=0; i<status.length; i++){
-		var row = status[i];
+	var AirDiv = document.getElementById("Airstate");
+	state = xmlDoc.getElementsByTagName("row");
+	for(var i=0; i<state.length; i++){
+		var row = state[i];
 		var div = document.createElement("div");
 		div.setAttribute("class","stateItem");
 		
-		div.innerHTML = row.getElementsByTagName("MSRDT")[0].childNodes[0].nodeValue+"에"
+		div.innerHTML = row.getElementsByTagName('MSRDT')[0].childNodes[0].nodeValue+"에"
 						+row.getElementsByTagName("MSRRGN_NM")[0].childNodes[0].nodeValue+" "
-						+row.getElementsByTagName("MSRSTE_NM")[0].childNodes[0].nodeValue+"에서 측정한 '" 
+						+row.getElementsByTagName("MSRSTE_NM")[0].childNodes[0].nodeValue+"에서 측정한 " 
 						+"미세먼지 농도는 "+row.getElementsByTagName("PM10")[0].childNodes[0].nodeValue+"이고, " 
 						+"초미세먼지농도는"+row.getElementsByTagName("PM25")[0].childNodes[0].nodeValue+"입니다."
 						+"통합 대기환경 등급 : "+row.getElementsByTagName("IDEX_NM")[0].childNodes[0].nodeValue
 						+"통합 대기환경 지수 :"+row.getElementsByTagName("IDEX_MVL")[0].childNodes[0].nodeValue;
 
-		statusDiv.appendChild(div);
+		AirDiv.appendChild(div);
 	}
 }
 /*
