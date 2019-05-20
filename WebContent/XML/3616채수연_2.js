@@ -44,9 +44,9 @@ function updatestatus(xml){
 						+row.getElementsByTagName("MSRRGN_NM")[0].childNodes[0].nodeValue+" "
 						+row.getElementsByTagName("MSRSTE_NM")[0].childNodes[0].nodeValue+"에서 측정한 " 
 						+"미세먼지 농도는 "+row.getElementsByTagName("PM10")[0].childNodes[0].nodeValue+"이고, " 
-						+"초미세먼지농도는"+row.getElementsByTagName("PM25")[0].childNodes[0].nodeValue+"입니다."
+						+"초미세먼지농도는"+row.getElementsByTagName("PM25")[0].childNodes[0].nodeValue+"입니다.<br>"
 						+"통합 대기환경 등급 : "+row.getElementsByTagName("IDEX_NM")[0].childNodes[0].nodeValue
-						+"통합 대기환경 지수 :"+row.getElementsByTagName("IDEX_MVL")[0].childNodes[0].nodeValue;
+						+"<br>통합 대기환경 지수 :"+row.getElementsByTagName("IDEX_MVL")[0].childNodes[0].nodeValue;
 
 		AirDiv.appendChild(div);
 	}
@@ -69,8 +69,8 @@ function updatestatus2(xml){
 						+"이산화질소농도는"+row.getElementsByTagName("NO2")[0].childNodes[0].nodeValue+" "
 						+"일산화탄소농도는"+row.getElementsByTagName("CO")[0].childNodes[0].nodeValue+" "
 						+"아황산가스농도는"+row.getElementsByTagName("SO2")[0].childNodes[0].nodeValue+" "
-						+"통합 대기환경 등급 : "+row.getElementsByTagName("IDEX_NM")[0].childNodes[0].nodeValue
-						+"통합 대기환경 지수 :"+row.getElementsByTagName("IDEX_MVL")[0].childNodes[0].nodeValue;
+						+"<br>통합 대기환경 등급 : "+row.getElementsByTagName("IDEX_NM")[0].childNodes[0].nodeValue
+						+"<br>통합 대기환경 지수 :"+row.getElementsByTagName("IDEX_MVL")[0].childNodes[0].nodeValue;
 
 		AirDiv.appendChild(div);
 	}
